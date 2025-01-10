@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "generate-sitemap": "node scripts/generate-sitemap.cjs"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
