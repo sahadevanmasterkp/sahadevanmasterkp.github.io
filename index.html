@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>Sahadevan Master KP | Mathematician & Educator</title>
+
+    <!-- Description for Search Engines -->
+    <meta
+      name="description"
+      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Learn through workshops, projects, and online courses."
+    />
+
+    <!-- Keywords for Search Engines -->
+    <meta
+      name="keywords"
+      content="Sahadevan Master, Mathematician, Educator, Mathematics, Learning, Geometry, Patterns, Education"
+    />
+
+    <!-- Open Graph for Social Media -->
+    <meta
+      property="og:title"
+      content="Sahadevan Master KP | Mathematician & Educator"
+    />
+    <meta
+      property="og:description"
+      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Join workshops, projects, and online courses."
+    />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sahadevan Master KP | Mathematician & Educator"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Join workshops, projects, and online courses."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourdomain.com/images/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Google Font for Accessibility -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Canonical Link to prevent duplicate content -->
+    <link rel="canonical" href="https://yourdomain.com" />
+
+    <style>
+      main,
+      footer {
+        display: none;
+      }
+
+      .bg-animation {
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      #page-loader {
+        position: fixed;
+        inset: 0;
+        max-width: 100svw;
+        max-height: 100svh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: #555;
+        z-index: 1000;
+      }
+
+      #loader-icon circle {
+        animation: pulse 1s infinite;
+        transform-origin: center;
+      }
+
+      #loader-icon circle:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      #loader-icon circle:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      [data-ml] {
+        display: none;
+        font-family: "Anek Malayalam", serif;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Sahadevan Master KP",
+        "url": "https://yourdomain.com",
+        "logo": "https://yourdomain.com/images/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/yourprofile",
+          "https://www.youtube.com/yourchannel"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+123456789",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        }
+      }
+    </script>
+
+    <!-- Main Script -->
+    <script type="module" crossorigin src="/assets/index-DFuC9pMS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BQDzES3z.css">
+  </head>
+  <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+      <p id="greeting"></p>
+      <svg id="loader-icon" width="100" height="100" viewBox="0 0 90 50">
+        <circle
+          cx="20"
+          cy="10"
+          r="10"
+          fill="black"
+          id="dot1"
+          visibility="visible"
+        />
+        <circle
+          cx="46"
+          cy="10"
+          r="8"
+          fill="black"
+          id="dot2"
+          visibility="hidden"
+        />
+        <circle
+          cx="70"
+          cy="10"
+          r="10"
+          fill="black"
+          id="dot3"
+          visibility="hidden"
+        />
+      </svg>
+
+      <script>
+        // Greet the user based on the time of day
+        const date = new Date();
+        const hours = date.getHours();
+        const greeting =
+          hours >= 6 && hours < 12
+            ? "Good morning!"
+            : hours >= 12 && hours < 18
+            ? "Good afternoon!"
+            : hours >= 18 && hours < 24
+            ? "Good evening!"
+            : "Good night!";
+        document.getElementById("greeting").textContent = greeting;
+
+        let dotCount = 0;
+        const loader = document.getElementById("page-loader");
+        const dot1 = document.getElementById("dot1");
+        const dot2 = document.getElementById("dot2");
+        const dot3 = document.getElementById("dot3");
+
+        const intervalId = setInterval(() => {
+          dotCount = (dotCount + 1) % 4;
+          dot1.style.visibility = dotCount >= 0 ? "visible" : "hidden";
+          dot2.style.visibility = dotCount > 1 ? "visible" : "hidden";
+          dot3.style.visibility = dotCount > 2 ? "visible" : "hidden";
+        }, 500);
+
+        // Stop the interval when the loader is hidden
+        const observer = new MutationObserver(() => {
+          if (loader.style.display === "none") {
+            clearInterval(intervalId);
+            observer.disconnect(); // Stop observing further changes
+          }
+        });
+
+        // Observe changes to the loader's style
+        observer.observe(loader, {
+          attributes: true,
+          attributeFilter: ["style"],
+        });
+      </script>
+    </div>
+
+    <!-- Background Animation -->
+    <div
+      id="background"
+      class="fixed inset-0 bg-black bg-opacity-70 z-0 bg-animation"
+      aria-hidden="true"
+    >
+      <canvas id="backgroundCanvas" class="w-full h-full"></canvas>
+
+      <!-- Photo -->
+      <div
+        id="bg-photo"
+        class="invisible xl:visible w-[50%] fixed right-0 bottom-0"
+      >
+        <img
+          src="\images\backgrounds\sm_photo.png"
+          alt="Photograph of Sahadevan Master TP"
+        />
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main aria-hidden="true" class="relative z-10">
+      <!--Language changer-->
+      <div
+        class="p-2 bg-slate-300 flex justify-center items-center flex-nowrap gap-2 text-[0.6rem]"
+      >
+        <span data-en>Change language:</span>
+        <span data-ml aria-hidden="true">ഭാഷ മാറ്റുക:</span>
+        <span class="">
+          <button id="lang-en">English</button> or
+          <button id="lang-ml">മലയാളം</button>
+        </span>
+      </div>
+
+      <!-- Hero -->
+      <section id="hero" aria-labelledby="hero-heading">
+        <div class="hero-content">
+          <blockquote
+            id="tagline"
+            aria-labelledby="tagline-heading"
+            data-aos="fade-up"
+          >
+            <p data-en>
+              Math isn’t just about numbers—it’s about patterns, beauty, and
+              discovery. Let’s explore the world of math in a way that sparks
+              curiosity and inspires learning, no matter your age or background!
+            </p>
+
+            <p data-ml aria-hidden="true">
+              ഗണിതം അക്കങ്ങളെക്കുറിച്ചല്ല—ഇത് പാറ്റേണുകളും സുന്ദര്യവും
+              കണ്ടെത്തലും ആയി ബന്ധപ്പെട്ടതാണ്.
+            </p>
+          </blockquote>
+
+          <div class="hero-headings" data-aos="fade-up">
+            <h1 id="hero-heading">
+              <span data-en>Sahadevan Master KP</span>
+              <span data-ml aria-hidden="true">സഹദേവൻ മാസ്റ്റർ കെ.പി</span>
+            </h1>
+
+            <p
+              id="profession"
+              aria-labelledby="profession-heading"
+              class="font-normal"
+            >
+              <span data-en>Mathematician and Educator</span>
+              <span data-ml aria-hidden="true">
+                ഗണിത ശാസ്ത്രജ്ഞനും അധ്യാപകനും
+              </span>
+            </p>
+          </div>
+          <div
+            id="social-links"
+            class="social-links__container"
+            data-aos="fade-up"
+          >
+            <p class="social-links__title" data-en>Follow me</p>
+            <p class="social-links__title" data-ml aria-hidden="true">
+              എന്നെ പിന്തുടരുക
+            </p>
+            <ul class="social-links__list">
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100008401380741"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook profile"
+                >
+                  <svg
+                    class="w-6 h-6 lg:w-8 lg:h-8 fill-current hover:text-blue-700 text-slate-800 transition-colors duration-300"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M28 27H33L35 19H28V15C28 12.94 28 11 32 11H35V4.28C34.348 4.194 31.886 4 29.286 4C23.856 4 20 7.314 20 13.4V19H14V27H20V44H28V27Z"
+                      fill="fill-current"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@sahadevanmasterkp?si=RnRt6jTiQldi61sT"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube channel"
+                >
+                  <svg
+                    class="w-7 h-7 lg:w-9 lg:h-9 fill-current hover:text-red-700 text-slate-800 transition-colors duration-300"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 10C42 10 42 10 42 24C42 38 42 38 24 38C6 38 6 38 6 24C6 10 6 10 24 10Z"
+                      stroke="fill-current"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path d="M20 17L32 24L20 31V17Z" fill="white" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" aria-labelledby="about-heading" data-aos="fade-up">
+        <h2 id="about-heading" class="sr-only">About Me</h2>
+        <!-- Photo for small screen -->
+        <div id="photo-sm" class="photo-sm__container">
+          <img
+            src="\images\backgrounds\sm_photo.png"
+            alt="Photograph of Sahadevan Master TP"
+          />
+        </div>
+        <div class="about-content">
+          <p data-en>
+            I am <strong>Sahadevan Master</strong>, a retired teacher from Govt.
+            UP School, Valoor, Perambra, Kozhikode. Though I retired from formal
+            teaching in 2014, my passion for sharing knowledge and inspiring
+            young minds has only grown stronger.
+          </p>
+
+          <p data-en>
+            I now reside in the quiet village of Edakkayil near Perambra, where
+            I continue to explore and share my love for mathematics and
+            geometric patterns. Over the years, I’ve had the privilege of
+            working with countless students, teachers, and parents, and I find
+            immense joy in helping them unlock the beauty of mathematics.
+          </p>
+
+          <p data-en>
+            Through workshops, innovative projects, and online classes, I aim to
+            make learning accessible, engaging, and meaningful. Whether you’re a
+            student, an educator, or simply curious about mathematics, I invite
+            you to join me on this journey of discovery and creativity.
+          </p>
+
+          <p data-en>Thank you for stopping by—let’s keep learning together!</p>
+
+          <p data-ml aria-hidden="true">
+            ഞാൻ സഹദേവൻ മാസ്റ്റർ, മുൻ ഗവ. യു.പി സ്കൂൾ, വാളൂർ, പേരാമ്പ്ര,
+            കോഴിക്കോട് അധ്യാപകനാണ്. 2014-ൽ ഔദ്യോഗിക അധ്യാപനത്തിൽ നിന്ന്
+            വിരമിച്ചെങ്കിലും, അറിവ് പങ്കിടാനും യുവ മനസ്സുകളെ പ്രചോദിപ്പിക്കാനും
+            ഉള്ള എന്റെ ആവേശം കൂടുതൽ ശക്തമായി.
+          </p>
+          <p data-ml aria-hidden="true">
+            ഇപ്പോൾ ഞാൻ പേരാമ്പ്രക്കടുത്ത എടക്കയിൽ എന്ന സമാധാനപരമായ ഗ്രാമത്തിൽ
+            താമസിക്കുന്നു, മാത്തമാറ്റിക്സിനോടും ജ്യാമിതീയ മാതൃകകളോടുമുള്ള എന്റെ
+            സ്നേഹം തുടർന്നും പിന്തുടരുന്നു. ഒട്ടനവധി വിദ്യാർത്ഥികളുമായും
+            അധ്യാപകരുമായും രക്ഷിതാക്കളുമായും വർഷങ്ങളായി പ്രവർത്തിക്കാൻ എനിക്ക്
+            അവസരം ലഭിച്ചു, മാത്തമാറ്റിക്സിന്റെ സൗന്ദര്യം
+            അവരെക്കണ്ടുപിടിക്കാനായുള്ള സഹായത്തിൽ ഞാൻ അതിയായ സന്തോഷം
+            കണ്ടെത്തുന്നു.
+          </p>
+          <p data-ml aria-hidden="true">
+            പാഠശാലകൾ, നവാഗത പദ്ധതികൾ, ഓൺലൈൻ ക്ലാസുകൾ എന്നിവ മുഖേന പഠനത്തെ
+            സുലഭമാക്കുകയും, ആകർഷകമാക്കുകയും, സാർഥകമാക്കുകയും ചെയ്യുക എന്നതാണ്
+            എന്റെ ലക്ഷ്യം. നിങ്ങൾ വിദ്യാർത്ഥിയാവട്ടെ, അധ്യാപകനാവട്ടെ, അല്ലെങ്കിൽ
+            മാത്തമാറ്റിക്സിനെ കുറിച്ച് സത്യത്തിൽ കൗതുകമുള്ള ഒരാളാവട്ടെ, ഈ
+            കണ്ടെത്തലിന്റെയും സൃഷ്ടിപരതയുടെയും യാത്രയിൽ നിങ്ങൾ ഞങ്ങളോടൊപ്പം
+            ചേരുന്നതിന് സ്വാഗതം.
+          </p>
+          <p data-ml aria-hidden="true">
+            ഇവിടെ വന്നതിൽ നന്ദി—നമുക്ക് ഒരുമിച്ച് പഠനം തുടർന്നുകൊള്ളാം!
+          </p>
+        </div>
+      </section>
+
+      <!-- Journey -->
+      <section id="journey" aria-labelledby="journey-heading">
+        <header
+          id="journey-header"
+          class="journey-header__container"
+          data-aos="fade-up"
+        >
+          <img src="/images/road.svg" class="journey-header__thumbnail" />
+          <h2 id="journey-heading" class="journey-header__title">
+            <span data-en>Journey of Impact</span>
+            <span data-ml aria-hidden="true">പ്രഭാവത്തിന്റെ യാത്ര</span>
+          </h2>
+        </header>
+
+        <div id="journey-content" class="journey-content__container">
+          <div class="journey-content__item" data-aos="fade-up">
+            <h3>
+              <span data-en>Self-Made Maths Lab(2008)</span>
+              <span data-ml aria-hidden="true"
+                >സ്വയം നിർമിത മാത്ത്‌സ് ലാബ് (2008)</span
+              >
+            </h3>
+            <p data-en>
+              Developed an innovative project to enhance mathematical
+              understanding, earning national recognition. This model was later
+              implemented in over 500 schools across Kerala, transforming the
+              way mathematics is taught.
+            </p>
+            <p data-ml aria-hidden="true">
+              ഗണിത ശാസ്ത്രത്തിന്റെ അറിവ് വർധിപ്പിക്കാൻ ഒരു നവീന പദ്ധതിക്ക് രൂപം
+              നൽകി, ദേശീയ പരിഗണന നേടി. ഈ മാതൃക കേരളത്തിലെ 500-ലധികം സ്കൂളുകളിൽ
+              നടപ്പാക്കി, ഗണിത പഠന രീതി മാറ്റിമറിക്കാൻ സഹായിച്ചു.
+            </p>
+          </div>
+
+          <div class="journey-content__item" data-aos="fade-up">
+            <h3>
+              <span data-en>Workshops and Training </span>
+              <span data-ml aria-hidden="true"
+                >വർക്ക്ഷോപ്പുകളും പരിശീലനങ്ങളും</span
+              >
+            </h3>
+            <ul>
+              <li>
+                <p data-en>
+                  Conducted over 3,000 one-day workshops for students, teachers,
+                  and parents, focusing on creative approaches to learning
+                  mathematics.
+                </p>
+                <p data-ml aria-hidden="true">
+                  വിദ്യാർത്ഥികൾക്കും അധ്യാപകർക്കും രക്ഷിതാക്കൾക്കും ഗണിത
+                  പഠനത്തിൽ സൃഷ്ടിപരമായ സമീപനങ്ങൾ പ്രോത്സാഹിപ്പിക്കുന്നതിനായി
+                  3,000-ലധികം ഏകദിന ശിൽപശാലകൾ നടത്തി.,
+                </p>
+              </li>
+              <li>
+                <p data-en>
+                  Served as a Key Resource Person (KRP) and SRG Trainer,
+                  supporting the development and execution of state-level
+                  mathematics projects.
+                </p>
+                <p data-ml aria-hidden="true">
+                  സംസ്ഥാനതല ഗണിത പദ്ധതികളുടെ രൂപകൽപ്പനയിലും നടപ്പാക്കലിലും
+                  പിന്തുണ നൽകിക്കൊണ്ട് കീ റിസോഴ്സ് പേഴ്സൺ (KRP) ആയി
+                  പ്രവർത്തിച്ചു, എസ്‌.ആർ‌.ജി ട്രെയിനറായി സേവനമനുഷ്ഠിച്ചു.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="journey-content__item" data-aos="fade-up">
+            <h3>
+              <span data-en>Digital Impact</span>
+              <span data-ml aria-hidden="true">ഡിജിറ്റൽ പ്രഭാവം</span>
+            </h3>
+            <p data-en>
+              During the COVID-19 pandemic, I launched the Sahadevan Master KP
+              YouTube channel, delivering
+              <strong>1,000+ online classes</strong> on geometrical patterns and
+              their mathematical insights. This effort brought the joy of
+              learning to thousands of students during challenging times.
+            </p>
+            <p data-ml aria-hidden="true">
+              കോവിഡ്-19 മഹാമാരിയുടെ സമയത്ത്, ഞാൻ സഹദേവൻ മാസ്റ്റർ കെ.പി. യൂട്യൂബ്
+              ചാനൽ ആരംഭിച്ചു, ജ്യാമിതീയ മാതൃകകൾ ಮತ್ತು അവയുടെ ഗണിതാത്മക
+              അവലോകനങ്ങൾ സംബന്ധിച്ച 1,000-ലധികം ഓൺലൈൻ ക്ലാസുകൾ നൽകി. ഈ ശ്രമം,
+              ദുർബലമായ സമയങ്ങളിൽ, ഹജാറുകളായ വിദ്യാർത്ഥികൾക്ക് പഠനത്തിന്റെ
+              സന്തോഷം എത്തിച്ചു.
+            </p>
+          </div>
+
+          <div class="journey-content__item" data-aos="fade-up">
+            <h3>
+              <span data-en>Mentoring Excellence</span>
+              <span data-ml aria-hidden="true">മാതൃകാപ്രദമായ മാർഗ്ഗദർശനം</span>
+            </h3>
+            <ul>
+              <li>
+                <p data-en>
+                  <strong> Guided Sharon J Satheesh </strong>, a 10th-grade
+                  student from Karippur HSS, whose 12x12 ft geometric pattern
+                  earned a place in the International Book of World Records.
+                </p>
+                <p data-ml aria-hidden="true">
+                  കാരിപ്പൂർ ഹൈസ്കൂൾ (Karippur HSS) പ്രഥമദർശി ഷാരോൺ ജി. സതീശ്
+                  എന്ന 10-ാം ക്ലാസ്സ് വിദ്യാർത്ഥിയെ മാർഗ്ഗദർശനം നൽകി, അവളുടെ
+                  12x12 അടി ജ്യാമിതീയ മാതൃക ഇന്റർനാഷണൽ ബുക്ക് ഓഫ് വേൾഡ്
+                  റെക്കോർഡ്സിൽ ഇടം നേടിയിട്ടുണ്ട്.
+                </p>
+              </li>
+              <li>
+                <p data-en>
+                  <strong> Teaching Aid Competition:</strong>Secured 1st place
+                  at the state level three times, showcasing innovative teaching
+                  methods.
+                </p>
+                <p data-ml aria-hidden="true">
+                  <strong>പാഠോപകരണ മത്സരം: </strong> സംസ്ഥാനതലത്തിൽ മൂന്ന് തവണ
+                  ഒന്നാമൻ സ്ഥാനമുടങ്ങിയിട്ടുണ്ട്, നവീന പാഠം പഠന രീതികൾ
+                  പ്രദർശിപ്പിച്ച്.
+                </p>
+              </li>
+              <li>
+                <p data-en>
+                  <strong>South Indian Competitions:</strong> Represented Kerala
+                  four times, bringing home prestigious awards for excellence in
+                  educational tools.
+                </p>
+                <p data-ml aria-hidden="true">
+                  ദക്ഷിണ ഇന്ത്യൻ മത്സറങ്ങൾ: കേരളത്തെ നാല് തവണ പ്രതിനിധീകരിച്ച്,
+                  വിദ്യാഭ്യാസോപകരണങ്ങളിൽ ശ്രദ്ധേയമായ പുരസ്കാരങ്ങൾ നേടുകയും
+                  ചെയ്തു.
+                </p>
+              </li>
+              <li>
+                <p data-en>
+                  <strong> Mathematics and Science Fairs:</strong>Mentored
+                  students to win A grades and grace marks in working models,
+                  still models, and geometrical charts at state-level fairs.
+                </p>
+                <p data-ml aria-hidden="true">
+                  <strong>ഗണിത ശാസ്ത്ര പ്രദർശനങ്ങൾ: </strong> സംസ്ഥാനതല
+                  പ്രദർശനങ്ങളിൽ പ്രവർത്തന മാതൃകകൾ, സ്റ്റിൽ മാതൃകകൾ, ജ്യാമിതീയ
+                  ചാർട്ടുകൾ എന്നിവയിൽ A ഗ്രേഡും ഗ്ലേസ് മാർക്കുകളും നേടി
+                  വിദ്യാർത്ഥികളെ മാർഗ്ഗദർശനം നൽകി.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section
+        id="gallery"
+        aria-labelledby="gallery-heading"
+        class="gallery__container"
+      >
+        <h2 id="gallery-heading" class="sr-only">Gallery</h2>
+        <div class="gallery__content-wrapper">
+          <div id="gallery-content" class="gallery__content"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      id="footer"
+      role="contentinfo"
+      aria-labelledby="footer-heading"
+      class="relative z-10"
+    >
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+      <div class="footer-content">
+        <!-- Social Media Links -->
+        <div
+          class="social-links"
+          role="list"
+          aria-labelledby="social-links-heading"
+        >
+          <h3 id="social-links-heading" class="sr-only">Social Media Links</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100008401380741"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook profile"
+              >
+                <svg
+                  class="w-6 h-6 lg:w-8 lg:h-8 fill-current hover:text-blue-700 text-slate-800 transition-colors duration-300"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M28 27H33L35 19H28V15C28 12.94 28 11 32 11H35V4.28C34.348 4.194 31.886 4 29.286 4C23.856 4 20 7.314 20 13.4V19H14V27H20V44H28V27Z"
+                    fill="fill-current"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@sahadevanmasterkp?si=RnRt6jTiQldi61sT"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube channel"
+              >
+                <svg
+                  class="w-7 h-7 lg:w-9 lg:h-9 fill-current hover:text-red-700 text-slate-800 transition-colors duration-300"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 10C42 10 42 10 42 24C42 38 42 38 24 38C6 38 6 38 6 24C6 10 6 10 24 10Z"
+                    stroke="fill-current"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M20 17L32 24L20 31V17Z" fill="white" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Copyright Information -->
+        <div class="copyright" aria-hidden="true">
+          <p>&copy; 2025 Sahadevan Master KP. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image viewer-->
+    <div id="image-viewer" class="image-viewer">
+      <button
+        id="close-image-viewer"
+        class="close-image-viewer"
+        aria-label="Close image viewer"
+      >
+        <svg
+          class="w-6 h-6 fill-current text-black"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6 6L18 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div class="image-viewer__image">
+        <img id="image-viewer-image" />
+      </div>
+      <div class="image-viewer__nav">
+        <button id="prev-image">Prev</button>
+        <button id="next-image">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
