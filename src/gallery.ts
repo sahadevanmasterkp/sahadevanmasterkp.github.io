@@ -44,23 +44,26 @@ export function Gallery(options: IGalleryOptions) {
     const img = viewer?.querySelector("img");
     viewer!.style.display = "flex";
     img!.src = images[i].src;
+    viewer!.setAttribute("aria-hidden", "false");
 
     const prev = viewer?.querySelector("#prev-image");
     prev?.addEventListener("click", () => {
+      const img = viewer?.querySelector("img");
       if (i === 0) {
-        openImageViewer(images.length - 1);
+        img!.src = images[images.length - 1].src;
         return;
       }
-      openImageViewer(i - 1);
+      img!.src = images[i - 1].src;
     });
 
     const next = viewer?.querySelector("#next-image");
     next?.addEventListener("click", () => {
-      if (i >= images.length) {
-        openImageViewer(0);
+      const img = viewer?.querySelector("img");
+      if (i >= images.length - 1) {
+        img!.src = images[0].src;
         return;
       }
-      openImageViewer(i + 1);
+      img!.src = images[i + 1].src;
     });
   }
 
@@ -93,6 +96,8 @@ export function Gallery(options: IGalleryOptions) {
     closeButton?.addEventListener("click", () => {
       const viewer = getElementById(viewerContainerId)!;
       viewer.style.display = "none";
+      viewer.querySelector("img")!.src = "";
+      viewer.setAttribute("aria-hidden", "true");
     });
   });
 }

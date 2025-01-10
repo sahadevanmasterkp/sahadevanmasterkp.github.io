@@ -128,7 +128,7 @@
   }
 
   .gallery-image__container > img {
-    @apply w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-300;
+    @apply w-full h-full object-cover hover:scale-105 transition-all duration-300;
   }
 
   .image-viewer {
