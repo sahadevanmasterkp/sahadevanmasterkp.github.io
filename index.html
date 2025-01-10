@@ -4,54 +4,56 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Title -->
-    <title>Sahadevan Master KP | Mathematician & Educator</title>
-
-    <!-- Description for Search Engines -->
+    <title>Sahadevan Master KP - Mathematician and Educator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Learn through workshops, projects, and online courses."
+      content="Welcome to the official website of Sahadevan Master KP, a retired teacher, mathematician, and educator passionate about inspiring minds through mathematics."
     />
-
-    <!-- Keywords for Search Engines -->
     <meta
       name="keywords"
-      content="Sahadevan Master, Mathematician, Educator, Mathematics, Learning, Geometry, Patterns, Education"
+      content="Sahadevan Master KP, Mathematician, Educator, Mathematics, Learning, Inspiration"
     />
-
-    <!-- Open Graph for Social Media -->
+    <meta name="author" content="Sahadevan Master KP" />
     <meta
       property="og:title"
-      content="Sahadevan Master KP | Mathematician & Educator"
+      content="Sahadevan Master KP - Mathematician and Educator"
     />
     <meta
       property="og:description"
-      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Join workshops, projects, and online courses."
+      content="Explore the journey of Sahadevan Master KP, a retired teacher dedicated to sharing the beauty of mathematics."
     />
     <meta
       property="og:image"
-      content="https://yourdomain.com/images/og-image.jpg"
+      content="https://sahadevanmasterkp.github.io/images/backgrounds/sm_photos.png"
     />
-    <meta property="og:url" content="https://yourdomain.com" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card Data -->
+    <meta property="og:url" content="https://sahadevanmasterkp.github.io" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Sahadevan Master KP | Mathematician & Educator"
+      content="Sahadevan Master KP - Mathematician and Educator"
     />
     <meta
       name="twitter:description"
-      content="Explore the world of mathematics with Sahadevan Master KP, a retired teacher and passionate educator. Join workshops, projects, and online courses."
+      content="Discover the passion of Sahadevan Master KP in sharing the love for mathematics."
     />
     <meta
       name="twitter:image"
-      content="https://yourdomain.com/images/og-image.jpg"
+      content="https://sahadevanmasterkp.github.io/images/backgrounds/sm_photos.png"
     />
+    <!-- Same as Open Graph image -->
+
+    <link rel="canonical" href="https://sahadevanmasterkp.github.io" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+    <link
+      rel="icon"
+      href="favicon-128x128.png"
+      type="image/png"
+      sizes="128x128"
+    />
 
     <!-- Google Font for Accessibility -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,8 +67,11 @@
       rel="stylesheet"
     />
 
-    <!-- Canonical Link to prevent duplicate content -->
-    <link rel="canonical" href="https://yourdomain.com" />
+    <script
+      src="https://kit.fontawesome.com/4fc19fe61d.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
 
     <style>
       main,
@@ -128,20 +133,20 @@
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "Organization",
+        "@type": "Person",
         "name": "Sahadevan Master KP",
-        "url": "https://yourdomain.com",
-        "logo": "https://yourdomain.com/images/logo.png",
+        "url": "https://sahadevanmasterkp.github.io",
+        "logo": "https://sahadevanmasterkp.github.io/images/logo.png",
         "sameAs": [
-          "https://www.facebook.com/yourprofile",
-          "https://www.youtube.com/yourchannel"
+          "https://www.facebook.com/profile.php?id=100008401380741",
+          "https://www.youtube.com/@sahadevanmasterkp"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "telephone": "+123456789",
+          "contactType": "Teacher/Instructor",
+          "email": "sahadevankp.edu@gmail.com",
           "areaServed": "IN",
-          "availableLanguage": "English"
+          "availableLanguage": "Malayalam, English"
         }
       }
     </script>
@@ -653,11 +658,20 @@
     </footer>
 
     <!-- Image viewer-->
-    <div id="image-viewer" class="image-viewer">
+    <div
+      id="image-viewer"
+      class="image-viewer"
+      role="dialog"
+      aria-labelledby="image-viewer-label"
+      aria-hidden="true"
+    >
+      <h2 id="image-viewer-label" class="sr-only">Image Viewer</h2>
       <button
         id="close-image-viewer"
         class="close-image-viewer"
         aria-label="Close image viewer"
+        aria-controls="image-viewer"
+        aria-expanded="false"
       >
         <svg
           class="w-6 h-6 fill-current text-black"
@@ -685,8 +699,16 @@
         <img id="image-viewer-image" />
       </div>
       <div class="image-viewer__nav">
-        <button id="prev-image">Prev</button>
-        <button id="next-image">Next</button>
+        <button
+          id="prev-image"
+          aria-label="Previous image"
+          aria-disabled="false"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="next-image" aria-label="Next image" aria-disabled="false">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </body>
