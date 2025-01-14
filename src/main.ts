@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener("load", () => {
   displayAfterLoad();
-  const images = Array.from({ length: 6 }, (_, i) => ({
+  const images = Array.from({ length: 10 }, (_, i) => ({
     src: getImage(i + 1),
     alt: `Image ${i + 1}`,
     caption: `Image ${i + 1}`,
