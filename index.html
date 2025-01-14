@@ -190,13 +190,13 @@
         const date = new Date();
         const hours = date.getHours();
         const greeting =
-          hours >= 6 && hours < 12
+          hours >= 5 && hours < 12
             ? "Good morning!"
-            : hours >= 12 && hours < 18
+            : hours >= 12 && hours < 17
             ? "Good afternoon!"
-            : hours >= 18 && hours < 24
+            : hours >= 17 && hours < 21
             ? "Good evening!"
-            : "Good night!";
+            : "Hello!";
         document.getElementById("greeting").textContent = greeting;
 
         let dotCount = 0;
