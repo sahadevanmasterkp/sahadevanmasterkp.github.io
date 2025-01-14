@@ -38,11 +38,31 @@ function updateLanguage(
 }
 
 /**
+ * Sets the document title based on the provided language.
+ * @param language - The target language code (e.g., "en" for English, "ml" for Malayalam).
+ */
+function setTitle(language: "ml" | "en") {
+  const titleMl = document
+    .querySelector('meta[name="title-ml"]')
+    ?.getAttribute("content");
+  const titleEn = document
+    .querySelector('meta[name="title-en"]')
+    ?.getAttribute("content");
+
+  if (language === "ml" && titleMl) {
+    document.title = titleMl;
+  } else if (language === "en" && titleEn) {
+    document.title = titleEn;
+  }
+}
+
+/**
  * Translates the webpage to Malayalam.
  * Uses elements marked with [data-ml] for Malayalam and hides [data-en].
  */
 export function translateToMl(): void {
   updateLanguage("ml", "[data-ml]", "[data-en]");
+  setTitle("ml");
 }
 
 /**
@@ -51,6 +71,7 @@ export function translateToMl(): void {
  */
 export function translateToEn(): void {
   updateLanguage("en", "[data-en]", "[data-ml]");
+  setTitle("en");
 }
 
 /**
