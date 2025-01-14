@@ -3,9 +3,11 @@ import { initializeScrollAnimation } from "./bg-animation";
 import { displayAfterLoad } from "./loader";
 import { Gallery } from "./gallery";
 import { getImage } from "./utils";
+import { initializeTranslation } from "./translator";
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeScrollAnimation("backgroundCanvas", "bg-photo");
+  initializeTranslation("lang-ml", "lang-en");
 });
 
 window.addEventListener("load", () => {
@@ -16,53 +18,4 @@ window.addEventListener("load", () => {
     caption: `Image ${i + 1}`,
   }));
   Gallery({ images });
-});
-
-function translateToMl() {
-  const mlElements = document.querySelectorAll("[data-ml]");
-  const enElements = document.querySelectorAll("[data-en]");
-
-  mlElements.forEach((element) => {
-    if (element instanceof HTMLElement) {
-      element.removeAttribute("aria-hidden");
-      element.style.display = "block";
-    }
-  });
-
-  enElements.forEach((element) => {
-    if (element instanceof HTMLElement) {
-      element.setAttribute("aria-hidden", "true");
-      element.style.display = "none";
-    }
-  });
-}
-
-function translateToEn() {
-  const mlElements = document.querySelectorAll("[data-ml]");
-  const enElements = document.querySelectorAll("[data-en]");
-
-  enElements.forEach((element) => {
-    if (element instanceof HTMLElement) {
-      element.removeAttribute("aria-hidden");
-      element.style.display = "block";
-    }
-  });
-
-  mlElements.forEach((element) => {
-    if (element instanceof HTMLElement) {
-      element.setAttribute("aria-hidden", "true");
-      element.style.display = "none";
-    }
-  });
-}
-
-const toMl = document.getElementById("lang-ml")!;
-const toEn = document.getElementById("lang-en")!;
-
-toMl.addEventListener("click", () => {
-  translateToMl();
-});
-
-toEn.addEventListener("click", () => {
-  translateToEn();
 });
