@@ -108,19 +108,15 @@
   }
 
   /**
-    * Gallery 
-    */
+ * Gallery 
+ */
 
   .gallery__container {
-    @apply flex flex-row;
+    @apply flex flex-row relative overflow-hidden; /* Overflow hidden for infinite scroll */
   }
 
-  .gallery__content-wrapper {
-    @apply flex flex-row gap-2 overflow-x-auto overflow-y-hidden;
-  }
-
-  .gallery__content {
-    @apply flex flex-row gap-0;
+  .gallery-scroll-content {
+    @apply flex flex-row gap-0; /* Maintain inline images for scrolling */
   }
 
   .gallery-image__container {
@@ -131,6 +127,14 @@
     @apply w-full h-full object-cover grayscale-[0.4] hover:grayscale-0 hover:scale-105 transition-all duration-300;
   }
 
+  .gallery {
+    transform: translateX(0); /* Initial position for scrolling */
+    will-change: transform; /* Optimize performance */
+  }
+
+  /*
+  Image Viewer
+  */
   .image-viewer {
     @apply hidden p-4 fixed inset-0 w-full h-full z-50 flex-col justify-center items-center bg-white bg-opacity-90;
   }
@@ -144,7 +148,7 @@
   }
 
   .image-viewer img {
-    @apply w-full object-cover;
+    @apply w-full h-full object-contain;
   }
 
   /**
