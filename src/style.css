@@ -144,7 +144,7 @@
   }
 
   .image-viewer img {
-    @apply w-full object-cover;
+    @apply w-full h-full object-contain;
   }
 
   /**

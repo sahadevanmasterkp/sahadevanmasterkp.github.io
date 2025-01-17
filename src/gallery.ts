@@ -1,4 +1,4 @@
-import { getElementById, querySelector, throwWarining } from "./utils";
+import { getElementById, throwWarining } from "./utils";
 
 type IImageInfo = {
   src: string;
@@ -33,71 +33,93 @@ export function Gallery(options: IGalleryOptions) {
     ...options,
   };
 
-  const gallery = getElementById(galleryContainerId);
-
-  if (images.length < 1) {
+  if (images.length === 0) {
     throwWarining("No images in the gallery.");
+    return;
   }
 
-  function openImageViewer(i: number) {
-    const viewer = document.getElementById(viewerContainerId);
-    const img = viewer?.querySelector("img");
-    viewer!.style.display = "flex";
-    img!.src = images[i].src;
-    viewer!.setAttribute("aria-hidden", "false");
-
-    const prev = viewer?.querySelector("#prev-image");
-    prev?.addEventListener("click", () => {
-      const img = viewer?.querySelector("img");
-      if (i === 0) {
-        img!.src = images[images.length - 1].src;
-        return;
-      }
-      img!.src = images[i - 1].src;
-    });
-
-    const next = viewer?.querySelector("#next-image");
-    next?.addEventListener("click", () => {
-      const img = viewer?.querySelector("img");
-      if (i >= images.length - 1) {
-        img!.src = images[0].src;
-        return;
-      }
-      img!.src = images[i + 1].src;
-    });
+  const gallery = getElementById(galleryContainerId);
+  if (!gallery) {
+    throw new Error(
+      `Gallery container with ID '${galleryContainerId}' not found.`
+    );
   }
+
+  const viewer = getElementById(viewerContainerId);
+  if (!viewer) {
+    throw new Error(
+      `Viewer container with ID '${viewerContainerId}' not found.`
+    );
+  }
+
+  const viewerImage = viewer.querySelector("img");
+  if (!viewerImage) {
+    throw new Error("Image element inside the viewer container is missing.");
+  }
+
+  let currentIndex = 0;
+
+  function openImageViewer(index: number) {
+    currentIndex = index;
+    viewer.style.display = "flex";
+    viewerImage!.src = images[index].src;
+    viewer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeImageViewer() {
+    viewer.style.display = "none";
+    viewerImage!.src = "";
+    viewer.setAttribute("aria-hidden", "true");
+  }
+
+  function navigateImage(step: number) {
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    viewerImage!.src = images[currentIndex].src;
+  }
+
+  // Attach navigation and close event listeners
+  const prevButton = viewer.querySelector("#prev-image");
+  const nextButton = viewer.querySelector("#next-image");
+  const closeButton = viewer.querySelector("#close-image-viewer");
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => navigateImage(-1));
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => navigateImage(1));
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener("click", closeImageViewer);
+  }
+
+  // Enable keyboard navigation
+  document.addEventListener("keydown", (event) => {
+    if (viewer.style.display === "flex") {
+      if (event.key === "ArrowLeft") navigateImage(-1);
+      if (event.key === "ArrowRight") navigateImage(1);
+      if (event.key === "Escape") closeImageViewer();
+    }
+  });
 
   // Render the gallery
-  images.forEach((image, i) => {
+  images.forEach((image, index) => {
     const container = document.createElement("div");
     container.className = "gallery-image__container";
-    container.id = `gallery-image-${i}`;
-    container.addEventListener("click", () => {
-      openImageViewer(i);
-    });
+    container.id = `gallery-image-${index}`;
+    container.addEventListener("click", () => openImageViewer(index));
 
     const img = document.createElement("img");
     img.src = image.src;
-    img.alt = image.alt ?? `Image ${i}`;
+    img.alt = image.alt ?? `Image ${index}`;
     img.className = "gallery-image";
-    if (imgOnLoad && typeof imgOnLoad === "function") {
+
+    if (imgOnLoad) {
       img.onload = () => imgOnLoad(img, image);
     }
 
     container.appendChild(img);
-
     gallery.appendChild(container);
-
-    // Initialize viewer
-
-    const closeButton = querySelector(
-      `#${viewerContainerId} > #close-image-viewer`
-    );
-    closeButton?.addEventListener("click", () => {
-      const viewer = getElementById(viewerContainerId)!;
-      viewer.style.display = "none";
-      viewer.querySelector("img")!.src = "";
-      viewer.setAttribute("aria-hidden", "true");
-    });
   });
 }
