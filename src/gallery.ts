@@ -12,6 +12,7 @@ interface _IGalleryOptions {
   images: IImageCollection;
   galleryContainerId: string;
   viewerContainerId: string;
+  scrollSpeed: number;
   imgOnLoad?: (img: HTMLImageElement, imgInfo: IImageInfo) => void;
 }
 
@@ -21,6 +22,7 @@ const defaultOptions: _IGalleryOptions = {
   images: [],
   galleryContainerId: "gallery-content",
   viewerContainerId: "image-viewer",
+  scrollSpeed: 0.4,
 };
 
 /**
@@ -28,7 +30,13 @@ const defaultOptions: _IGalleryOptions = {
  * @param options - Gallery options
  */
 export function Gallery(options: IGalleryOptions) {
-  const { images, galleryContainerId, viewerContainerId, imgOnLoad } = {
+  const {
+    images,
+    galleryContainerId,
+    viewerContainerId,
+    scrollSpeed,
+    imgOnLoad,
+  } = {
     ...defaultOptions,
     ...options,
   };
@@ -88,7 +96,7 @@ export function Gallery(options: IGalleryOptions) {
 
   // Infinite scrolling animation
   let scrollPosition = 0;
-  const speed = 0.4; // Scrolling speed
+  const speed = scrollSpeed; // Scrolling speed
 
   function animate() {
     scrollPosition -= speed;
